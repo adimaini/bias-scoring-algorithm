@@ -43,3 +43,17 @@ class raw_data:
             return pd.DataFrame(combined_data, columns=cols)
         else: 
             raise ValueError('Wrong data type. Only numpy arrays and dataframe are accepted as input.')
+    
+    def make_training_array(self, data_frame):
+        #Copy biased column and assign label 1 to all biased strings
+        training_array_1 = pd.DataFrame(data_frame[self.ind1])
+        training_array_1.columns = ['string']
+        training_array_1['label'] = 1
+
+        #Copy unbiased column and assign label 0 to all unbiased strings
+        training_array_2 = pd.DataFrame(data_frame[self.ind2])
+        training_array_2['label'] = 0
+        training_array_2.columns = training_array_1.columns
+
+        #Return array of merged examples, with order randomized, index reset, and labels preserved
+        return pd.concat([training_array_1, training_array_2]).sample(frac=1).reset_index(drop=True)
