@@ -33,9 +33,9 @@ class raw_data:
         return a combined dataset with the missing words as an additional column
         '''
         # get missing words as numpy array
-        mis_words = self.find_emitted_words(self.read_data)
+        mis_words = self.find_emitted_words(self.read_data())
         # combine the datasets
-        combined_data = np.column_stack((self.read_data, mis_words))
+        combined_data = np.column_stack((self.read_data(), mis_words))
         
         if dtype == 'np':
             return combined_data
