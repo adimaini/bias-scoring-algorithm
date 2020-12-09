@@ -3,14 +3,14 @@ import torch
 import transformers as ppb # pytorch transformers
 from sklearn.linear_model import LogisticRegression
 import importlib
-import lib.processing.data_processing as lib
+import lib.data_processing as lib
 from sklearn.metrics import confusion_matrix
 
 importlib.reload(lib)
 
 #read the data
-TRAIN_FP = 'data/bias_data/WNC/biased.word.train'
-TEST_FP = 'data/bias_data/WNC/biased.word.test'
+TRAIN_FP = 'bias_data/bias_data/WNC/biased.word.train'
+TEST_FP = 'bias_data/bias_data/WNC/biased.word.test'
 
 wnc_train = lib.raw_data(TRAIN_FP, 3, 4)
 wnc_train_df = wnc_train.add_miss_word_col(dtype='df')

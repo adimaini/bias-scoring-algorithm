@@ -1,4 +1,4 @@
-import lib.data_processing as lib
+import lib.processing.data_processing as lib
 import importlib
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,7 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import texthero as hero
 from collections import Counter
 
-df = pd.read_csv('./bias_data/bias_data/transcripts/transcripts.csv')
+df = pd.read_csv('./data/bias_data/transcripts/transcripts.csv')
 print(df.shape)
 
 

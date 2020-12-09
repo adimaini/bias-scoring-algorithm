@@ -1,4 +1,4 @@
-import lib.data_processing as lib
+import lib.processing.data_processing as lib
 import importlib
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,7 +8,7 @@ import seaborn as sns
 
 importlib.reload(lib)
 
-PATH = './bias_data/bias_data/WNC/biased.word.train' 
+PATH = './data/bias_data/WNC/biased.word.train' 
 wnc_train = lib.raw_data(PATH, 3, 4)
 wnc_train_df = wnc_train.add_miss_word_col(dtype='df')
 wnc_train_df.head(5)
