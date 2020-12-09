@@ -126,10 +126,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-<<<<<<< HEAD
-=======
 
 #Data
 data/
-# bias_data
->>>>>>> c1d74755728906647b3d501e51b3555e6a4fdd75
+
+#unused files in final submission
+Pitchfork\ data\ process.ipynb
